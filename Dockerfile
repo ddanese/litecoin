@@ -13,7 +13,7 @@ RUN apt-get install -y libminiupnpc-dev
 #ZMQ
 RUN apt-get install -y libzmq3-dev
 #build zdatacoin source
-ENV BDB_PREFIX=./db4
+ENV BDB_PREFIX=${WORKDIR}/db4
 RUN ./autogen.sh
 RUN ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_PREFIX}/include" --without-gui --with-zmq
 RUN make
