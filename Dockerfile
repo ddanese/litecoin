@@ -19,5 +19,5 @@ RUN ./configure BDB_LIBS="-L${BDB_PREFIX}/lib -ldb_cxx-4.8" BDB_CFLAGS="-I${BDB_
 RUN make
 RUN make install
 #open service port
-EXPOSE 9666 19666
+EXPOSE 9642 19642
 CMD ["zdatacoind", "--printtoconsole"]
